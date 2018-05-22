@@ -9,6 +9,7 @@
     "parcel-bundler": "^1.8.1"
   },
   "scripts": {
+    "server": "parcel index.html -p 8888 --out-dir public --no-hmr",
     "watch": "parcel watch index.html --out-dir public --no-hmr",
     "build": "parcel build index.html --out-dir public"
   }

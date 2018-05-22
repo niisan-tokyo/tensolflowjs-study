@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /opt/yarn-v1.5.1/bin/yarn.js build
+  /usr/local/bin/node /opt/yarn-v1.5.1/bin/yarn.js watch
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -17,6 +17,7 @@ npm manifest:
   {
     "dependencies": {
       "@tensorflow/tfjs": "^0.11.1",
+      "axios": "^0.18.0",
       "babel-plugin-transform-runtime": "^6.23.0",
       "babel-polyfill": "^6.26.0",
       "babel-preset-env": "^1.7.0",
@@ -24,8 +25,8 @@ npm manifest:
       "parcel-bundler": "^1.8.1"
     },
     "scripts": {
-      "server": "parcel index.html -p 8888 --out-dir public --no-hmr",
-      "build": "parcel build index.html --out-dir public --no-hmr"
+      "watch": "parcel watch index.html -p 8888 --out-dir public --no-hmr",
+      "build": "parcel build index.html --out-dir public"
     }
   }
 
@@ -164,6 +165,13 @@ Lockfile:
       num2fraction "^1.2.2"
       postcss "^5.2.16"
       postcss-value-parser "^3.2.3"
+  
+  axios@^0.18.0:
+    version "0.18.0"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+    dependencies:
+      follow-redirects "^1.3.0"
+      is-buffer "^1.1.5"
   
   babel-code-frame@^6.26.0:
     version "6.26.0"
@@ -1220,6 +1228,12 @@ Lockfile:
     dependencies:
       ms "2.0.0"
   
+  debug@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+    dependencies:
+      ms "2.0.0"
+  
   decamelize@^1.1.2:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
@@ -1529,6 +1543,12 @@ Lockfile:
   flatten@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
+  
+  follow-redirects@^1.3.0:
+    version "1.5.0"
+    resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.0.tgz#234f49cf770b7f35b40e790f636ceba0c3a0ab77"
+    dependencies:
+      debug "^3.1.0"
   
   for-in@^1.0.2:
     version "1.0.2"
@@ -3663,7 +3683,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c parcel build index.html --out-dir public --no-hmr
+  Arguments: -c parcel watch index.html -p 8888 --out-dir public --no-hmr
   Directory: /var/www
   Output:
   
